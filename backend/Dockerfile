@@ -2,7 +2,7 @@ FROM  python:3.9.6-alpine
 
 ENV PYTHONUNBUFFERED=1
 
-WORKDIR /api
+WORKDIR /backend
  
 
 COPY . .
