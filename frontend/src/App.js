@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const [text, setText] = useState(0);
   useEffect(() => {
-  fetch(' http://ec2-3-82-107-68.compute-1.amazonaws.com:8000/').then(res => res.json()).then(data => {
+  fetch(' http://0.0.0.0:8000/').then(res => res.json()).then(data => {
       setText(data.text)
       
     });
@@ -20,3 +20,46 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   fetch(' http://ec2-3-82-107-68.compute-1.amazonaws.com:8000/').then(res => res.json()).then(data => {
+//       setText(data.text)
