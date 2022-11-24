@@ -4,9 +4,15 @@ ingress:
   annotations: 
     class: nginx
   hosts:
-    - host: chart-example.local
-      paths: 
-        - path: /
-          backend:
-            serviceName: serviceName
-            servicePort: 8080
+  - host: kubernetes.docker.internal
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: frontend-service
+          servicePort: 3000
+      
+      - path: /todolist
+        backend:
+          serviceName: backend-service
+          servicePort: 8000
