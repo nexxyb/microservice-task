@@ -1,0 +1,6 @@
+app:
+  name: backend
+  group: backend
+  container:
+    image: microservice-task_backend
+    

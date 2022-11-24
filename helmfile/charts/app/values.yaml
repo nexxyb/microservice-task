@@ -1,0 +1,12 @@
+app:
+  name: app
+  group: app
+  replicaCount: 1
+  container:
+    image: microservice-task_backend
+    port: 8080
+    config: []
+    
+  service:
+    type: ClusterIP
+    port: 8080
