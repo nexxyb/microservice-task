@@ -1,4 +1,4 @@
-apiVersion: apps/v2
+apiVersion: v2
 kind: Deployment
 metadata:
   creationTimestamp: null
