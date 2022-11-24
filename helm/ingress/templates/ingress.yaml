@@ -10,10 +10,10 @@ spec:
       paths: 
         - path: /
           backend:
-            serviceName: frontend
+            serviceName: frontend-service
             servicePort: 3000
         - path: /api
           backend:
-            serviceName: frontend
+            serviceName: backend-service
             servicePort: 8000
   
