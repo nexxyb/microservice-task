@@ -6,7 +6,7 @@ metadata:
   name: microservice-task-ingress
 spec:
   rules:
-    - host: ec2-44-204-182-166.compute-1.amazonaws.com
+    - host: localhost
     - http:  
         paths: 
         - pathType: Prefix
