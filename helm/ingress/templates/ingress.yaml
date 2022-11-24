@@ -6,16 +6,14 @@ metadata:
   name: microservice-task-ingress
 spec:
   rules:
-    - host: http://ec2-44-204-182-166.compute-1.amazonaws.com/
-      http:
-       paths:
+    - host: ec2-44-204-182-166.compute-1.amazonaws.com
+      paths: 
         - path: /
           backend:
-            serviceName: frontend-service
+            serviceName: frontend
             servicePort: 3000
-        
-        - path: /
+        - path: /api
           backend:
-            serviceName: backend-service
+            serviceName: frontend
             servicePort: 8000
   
