@@ -1,4 +1,4 @@
-FROM  python:3.9.6-alpine
+FROM  python:3.8-slim
 
 ENV PYTHONUNBUFFERED=1
 
@@ -7,6 +7,6 @@ WORKDIR /backend
 
 COPY . .
 
-RUN pip install django django-cors-headers
+RUN pip install django==4.1 django-cors-headers
 
 EXPOSE 8000
