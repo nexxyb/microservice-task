@@ -3,7 +3,7 @@ app:
   group: app
   replicaCount: 1
   container:
-    image: microservice-task_backend
+    image: add-image-here
     port: 8080
     config: []
     

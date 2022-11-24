@@ -21,13 +21,4 @@ spec:
           image: {{ .Values.app.container.image }}  
           ports:
             - containerPort: {{ .Values.app.container.port }}
-          envFrom:
-            {{- range .Values.app.container.config }}
-            - configMapRef:
-                name: {{ .name }}
-            {{- end}}
-          env:
-            {{- range .Values.app.container.env}}
-            - name: {{ .key}}
-              value: {{ .value}}
-            {{- end}}
+          

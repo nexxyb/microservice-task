@@ -1,6 +1,5 @@
 ingress:
-  hosts:
-    
+    - host: ec2-44-204-182-166.compute-1.amazonaws.com
       paths: 
         - path: /api/
           backend:
