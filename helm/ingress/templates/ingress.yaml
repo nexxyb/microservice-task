@@ -7,12 +7,13 @@ metadata:
 spec:
   rules:
     - host: ec2-44-204-182-166.compute-1.amazonaws.com
-      paths: 
+    - http:  
+        paths: 
         - path: /
           backend:
             serviceName: frontend-service
             servicePort: 3000
-        - path: /api
+        - path: /
           backend:
             serviceName: backend-service
             servicePort: 8000
