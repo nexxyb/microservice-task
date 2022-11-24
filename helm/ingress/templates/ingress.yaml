@@ -1,9 +1,9 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 
 kind: Ingress
 
 metadata:
-  name: microservice-task
+  name: microservice-task-ingress
 spec:
   rules:
     - host: http://ec2-44-204-182-166.compute-1.amazonaws.com/
