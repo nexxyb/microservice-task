@@ -1,11 +1,11 @@
 ingress:
     - host: ec2-44-204-182-166.compute-1.amazonaws.com
       paths: 
-        - path: /api/
-          backend:
-            serviceName: backend
-            servicePort: 8080
         - path: /
           backend:
             serviceName: frontend
-            servicePort: 80
+            servicePort: 3000
+        - path: /api
+          backend:
+            serviceName: frontend
+            servicePort: 8000

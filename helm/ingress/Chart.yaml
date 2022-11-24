@@ -1,4 +1,4 @@
-apiVersion: v3
+apiVersion: extensions/v1beta1
 name: ingress
 description: A Helm chart for Ingress Controller
 type: application
