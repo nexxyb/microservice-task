@@ -8,5 +8,6 @@ WORKDIR /backend
 COPY . .
 
 RUN pip install django==4.1 django-cors-headers
-CMD ["python", "manage.py", "runserver", ]
+ENTRYPOINT ["python3"] 
+CMD ["manage.py", "runserver", "0.0.0.0:8000"]
 EXPOSE 8000
