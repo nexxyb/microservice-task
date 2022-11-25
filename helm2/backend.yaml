@@ -1,0 +1,12 @@
+app:
+  name: backend
+  group: backend
+  container:
+    image: microservice-task_backend
+    
+  service:
+    type: NodePort
+    port: 8000
+    targetPort: 8000
+    nodePort: 31009
+

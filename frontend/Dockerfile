@@ -9,5 +9,5 @@ RUN npm install -g npm@9.1.2
 RUN npm install
 # Build the app
 #RUN npm run build
-
+CMD ["npm","start"]
 EXPOSE 3000
