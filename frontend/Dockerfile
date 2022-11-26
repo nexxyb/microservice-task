@@ -1,4 +1,4 @@
-FROM node:16.4-alpine3.14 as builder
+FROM node:19-alpine3.15 as builder
 WORKDIR /app
 RUN apk add --no-cache g++ make python3
 COPY package*.json /app/
@@ -6,7 +6,7 @@ RUN npm install
 COPY . .
 RUN npm run build && npm prune --production
 
-FROM node:16.4-alpine3.14 as final
+FROM node:node:19-alpine3.15 as final
 USER node:node
 WORKDIR /app
 COPY --chown=node:node resources resources
