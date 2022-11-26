@@ -1,13 +1,8 @@
-FROM node:19-slim
-# Set the working directory to /app inside the container
+FROM alpine
+RUN apk add --update nodejs npm
 WORKDIR /app
-# Copy app files
+COPY package*.json ./
+RUN npm ci
 COPY . .
-# Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
-RUN npm install -g npm@9.1.2
-
-RUN npm install
-# Build the app
-#RUN npm run build
-CMD ["npm","start"]
-EXPOSE 3000
+EXPOSE 5000
+CMD ["npm", "start"]
