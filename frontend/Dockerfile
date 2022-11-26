@@ -1,7 +1,7 @@
 FROM node:16.4-alpine3.14 as builder
 WORKDIR /app
 RUN apk add --no-cache g++ make python3
-COPY package*.json .npmrc /app/
+COPY package*.json /app/
 RUN npm install
 COPY . .
 RUN npm run build && npm prune --production
