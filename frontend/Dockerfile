@@ -1,16 +1,13 @@
-FROM node:19-alpine3.15 as builder
+FROM node:19-slim
+# Set the working directory to /app inside the container
 WORKDIR /app
-RUN apk add --no-cache g++ make python3
-COPY package*.json /app/
-RUN npm install
+# Copy app files
 COPY . .
-RUN npm run build && npm prune --production
+# Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
+RUN npm install -g npm@9.1.2
 
-FROM node:19-alpine3.15 as final
-USER node:node
-WORKDIR /app
-#COPY --chown=node:node resources resources
-COPY --from=builder --chown=node:node /app/package*.json ./
-COPY --from=builder --chown=node:node /app/build/ build
-COPY --from=builder --chown=node:node /app/node_modules/ node_modules
-CMD ["node", "build/src/server.js"]
+RUN npm install
+# Build the app
+#RUN npm run build
+#CMD ["npm","start"]
+EXPOSE 3000
