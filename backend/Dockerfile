@@ -6,7 +6,7 @@ RUN pip install django django-cors-headers
 
 COPY . .
 ENTRYPOINT ["python"] 
-CMD ["manage.py", "runserver", "127.0.0.1:8000"]
+CMD ["manage.py", "runserver", "0.0.0.0:8000"]
 
 
 EXPOSE 8000
