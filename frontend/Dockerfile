@@ -6,7 +6,7 @@ RUN npm install
 COPY . .
 RUN npm run build && npm prune --production
 
-FROM node:node:19-alpine3.15 as final
+FROM node:19-alpine3.15 as final
 USER node:node
 WORKDIR /app
 COPY --chown=node:node resources resources
