@@ -13,6 +13,6 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend:/frontend
-    command: npm start
+    command: nginx -g daemon off
     depends_on: 
     - backend
