@@ -30,4 +30,4 @@ RUN rm -rf *
 COPY --from=builder /app/build .
 
 # Entry point when Docker container has started
-#ENTRYPOINT ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
