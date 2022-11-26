@@ -31,4 +31,4 @@ COPY --from=builder /app/build .
 
 # Entry point when Docker container has started
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
-EXPOSE 3000
+EXPOSE 8080
