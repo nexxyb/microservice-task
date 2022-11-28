@@ -18,9 +18,10 @@ spec:
         app: frontend
     spec:
       containers:
-      - image: microservice-task_web
+      - image: nexxyb/frontlent
+        imagePullPolicy: Never
         name: frontend
         ports:
           - containerPort: 3000
-        command: ["npm", "start"]
+        
         

@@ -1,6 +1,0 @@
-app:
-  name: frontend
-  group: frontend
-  container:
-    image: microservice-task_web
-    port: 80

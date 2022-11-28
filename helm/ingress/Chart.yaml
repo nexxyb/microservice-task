@@ -1,4 +1,4 @@
-apiVersion: v3
+apiVersion: v2
 name: ingress
 description: A Helm chart for Ingress Controller
 type: application
@@ -8,7 +8,7 @@ keywords:
   - ingress
   - nginx
   - api-gateway
-
+home: https://github.com/nexxyb/microservice-task
 maintainers:
   - name: Wasiu Odebunmi
     url: https://github.com/nexxyb

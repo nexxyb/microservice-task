@@ -1,8 +1,8 @@
-FROM  alpine
-RUN apk add py3-pip
+FROM  python:3.9.6-alpine
+
 WORKDIR /backend
 
-RUN pip install django django-cors-headers 
+RUN pip install django==4.1.3 django-cors-headers==3.13.0
 
 COPY . .
 ENTRYPOINT ["python"] 

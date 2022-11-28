@@ -1,26 +1,19 @@
-apiVersion: networking.k8s.io/v1
-
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
-
 metadata:
-  name: microservice-task-ingress
+  name: {{ .Values.ingress.name }}
+  annotations:
+    kubernetes.io/ingress.class: {{ .Values.ingress.annotations.class }}
 spec:
   rules:
-    - host: localhost
-    - http:  
-        paths: 
-        - pathType: Prefix
-          path: /
-          backend:
-            service: 
-              name: frontend-service
-              port: 
-                number: 3000
-        - pathType: Prefix
-          path: /
-          backend:
-            service:
-              name: backend-service
-              port:
-                number: 8000
-  
+  {{- range .Values.ingress.hosts }}
+    - host: {{ .host | quote }}
+      http:
+        paths:
+        {{- range .paths }}
+          - path: {{ .path }}
+            backend:
+              serviceName: {{ .backend.serviceName }}
+              servicePort: {{ .backend.servicePort }}
+        {{- end }}
+  {{- end }}
