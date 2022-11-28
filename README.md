@@ -14,7 +14,9 @@
     `minikube -p minikube docker-env`
     <br />
 6.  Ensure to point your shell to minikube's docker-daemon, run:
+    <br />
      `eval $(minikube -p minikube docker-env)`
+     <br />
 7. Build the images for both frontend and backend
     ```bash
     $ docker build -t backlent ./backend
